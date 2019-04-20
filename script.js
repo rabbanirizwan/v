@@ -1,47 +1,47 @@
-var parameter=0;
-    var map;
-var service;
-var infowindow;
+// var parameter=0;
+//     var map;
+// var service;
+// var infowindow;
 
-var  latitude;
-var longitude;
+// var  latitude;
+// var longitude;
 
-function initMap() {
-     navigator.geolocation.getCurrentPosition(success,fail);
-function success(position)
- {
-    //latitude = position.coords.latitude;
- //longitude = position.coords.longitude;
-localStorage.setItem("longitude",position.coords.longitude);
-localStorage.setItem("lastname", position.coords.latitude);
+// function initMap() {
+//      navigator.geolocation.getCurrentPosition(success,fail);
+// function success(position)
+//  {
+//     //latitude = position.coords.latitude;
+//  //longitude = position.coords.longitude;
+// localStorage.setItem("longitude",position.coords.longitude);
+// localStorage.setItem("lastname", position.coords.latitude);
 
-}
- function fail()
- {
-   alert("fail");
- }
+// }
+//  function fail()
+//  {
+//    alert("fail");
+//  }
 
-var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
+// var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
 
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
-    });
+//   map = new google.maps.Map(document.getElementById('map'), {
+//       center: pyrmont,
+//       zoom: 15
+//     });
 
 
 
-  var request = {
-    location: pyrmont,
-    radius: '1000',
-    type: ['restaurant']
-  };
+//   var request = {
+//     location: pyrmont,
+//     radius: '1000',
+//     type: ['restaurant']
+//   };
 
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
+//   service = new google.maps.places.PlacesService(map);
+//   service.nearbySearch(request, callback);
 
 
   
-}
+// }
 
 //  function createPhoto(place) {
 //   var photos = place.photos;
