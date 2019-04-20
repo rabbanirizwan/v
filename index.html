@@ -20,18 +20,19 @@
       var map;
 var service;
 var infowindow;
-
+var latitude,longitude;
 
 function initMap() {
      navigator.geolocation.getCurrentPosition(success,fail);
   function success(position)
  {
-   var latitude = position.coords.latitude;
-var longitude = position.coords.longitude;
+    latitude = position.coords.latitude;
+ longitude = position.coords.longitude;
 var pyrmont = new google.maps.LatLng(latitude,longitude);
-//localStorage.setItem("latitude",latitude);
-//localStorage.setItem("longitude",longitude);
-
+localStorage.setItem("latitude",latitude);
+localStorage.setItem("longitude",longitude);
+console.log(localStorage.getItem("longitude"));
+console.log(longitude);
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
       zoom: 15
