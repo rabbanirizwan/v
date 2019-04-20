@@ -28,9 +28,7 @@ function initMap() {
  {
    var latitude = position.coords.latitude;
 var longitude = position.coords.longitude;
-//localStorage.setItem("longitude",position.coords.longitude);
-//localStorage.setItem("latitude",position.coords.latitude);
-var pyrmont = new google.maps.LatLng(parseFloat(latitude,longitude);
+var pyrmont = new google.maps.LatLng(latitude,longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
@@ -46,13 +44,12 @@ var pyrmont = new google.maps.LatLng(parseFloat(latitude,longitude);
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
 
-
-
  }
  function fail()
  {
    alert("fail");
  }
+
   
 }
 
@@ -167,7 +164,6 @@ function createMarker(place) {
     </div>   
         
 </footer>
-<script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy1iAAVvW9l0HXJ3MXipB2x6YvofjTU6o&libraries=places&callback=initMap" async defer></script>
   </body>
 </html>
