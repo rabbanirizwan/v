@@ -44,8 +44,8 @@ var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStora
 
 function food2() {
     document.getElementById("places").innerHTML = " ";
-console.log(parseFloat(localStorage.getItem("latitude")));
-    var pyrmont = new google.maps.LatLng(parseFloat(localStorage.getItem("latitude")),parseFloat(localStorage.getItem("longitude")));
+console.log(Number(localStorage.getItem("latitude")));
+    var pyrmont = new google.maps.LatLng(Number(localStorage.getItem("latitude")),Number(localStorage.getItem("longitude")));
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
