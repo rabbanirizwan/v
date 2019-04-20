@@ -1,67 +1,3 @@
-// var parameter=0;
-//     var map;
-// var service;
-// var infowindow;
-
-// var  latitude;
-// var longitude;
-
-// function initMap() {
-//      navigator.geolocation.getCurrentPosition(success,fail);
-// function success(position)
-//  {
-//     //latitude = position.coords.latitude;
-//  //longitude = position.coords.longitude;
-// localStorage.setItem("longitude",position.coords.longitude);
-// localStorage.setItem("lastname", position.coords.latitude);
-
-// }
-//  function fail()
-//  {
-//    alert("fail");
-//  }
-
-// var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
-
-//   map = new google.maps.Map(document.getElementById('map'), {
-//       center: pyrmont,
-//       zoom: 15
-//     });
-
-
-
-//   var request = {
-//     location: pyrmont,
-//     radius: '1000',
-//     type: ['restaurant']
-//   };
-
-//   service = new google.maps.places.PlacesService(map);
-//   service.nearbySearch(request, callback);
-
-
-  
-// }
-
-//  function createPhoto(place) {
-//   var photos = place.photos;
-// var i=0;
-//    if (!photos) {
-//      return;
-//   }
-//    var img = document.createElement("img");
- 
-//    //for (var i=0;i<photos.length;i++){
-//     img.src = photos[i].getUrl({'maxWidth': 100, 'maxHeight': 100});
-//     //document.getElementById("img-container").appendChild(img.cloneNode(true));
-//     document.getElementById("first-place-img").style.backgroundImage='url(photos[i].getUrl())'; 
-//     console.log(photos[i].getUrl());
-//     i++;
-//   // }
-//  }
-
-
- 
 
 
 function food1() {
@@ -109,7 +45,7 @@ var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStora
 function food2() {
     document.getElementById("places").innerHTML = " ";
 
-    var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
+    var pyrmont = new google.maps.LatLng(parseFloat(localStorage.getItem("latitude")),parseFloat(localStorage.getItem("longitude")));
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
