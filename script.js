@@ -3,7 +3,7 @@
 function food1() {
     document.getElementById("places").innerHTML = " ";
 
-console.log(localStorage.getItem("lastname"));
+//console.log(localStorage.getItem("lastname"));
 var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -44,7 +44,7 @@ var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStora
 
 function food2() {
     document.getElementById("places").innerHTML = " ";
-
+console.log(parseFloat(localStorage.getItem("latitude")));
     var pyrmont = new google.maps.LatLng(parseFloat(localStorage.getItem("latitude")),parseFloat(localStorage.getItem("longitude")));
 
   map = new google.maps.Map(document.getElementById('map'), {
