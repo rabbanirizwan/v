@@ -29,10 +29,10 @@
             <p> HappyHour</p> 
             <p><i class="fas fa-info-circle"></i></p>
        </div>
+
         
     </header>
-
-       <div class="second-nav sticky-top">
+        <div class="second-nav sticky-top">
            
           <p id = "one" >  <a  onclick="food1()" href="#food">Food</a> </p>
            <p id = "two"> <a href="#Drinks" onclick="food2()">Drinks</a></p>
@@ -42,12 +42,25 @@
            <p id = "six"> <a  href="#travel" onclick="food6()">Travel</a> </p>
 
        </div>
-    <div id="map"></div>
-    <section id="places"> 
-   
-    </section>
 
-    <footer class="sticky-bottom">
+       <section>
+               <div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="first-place">
+        <div style = "background-image:url('index.jpg');'" id="first-place-img"></div>
+        <div class="inner-style">
+            <p class="foodway"> sdsd <br><small>sdsdsd</small></p>
+            <div class="inner-style1">
+                  <p><i class="fas fa-map-marker-alt"></i>
+                      dsdasdasd</p>
+                  <p style="color:#ed8707; padding-left: 27px;">Next deal 3pm to 7pm </p>
+            </div>
+          
+            </div>
+          </div>
+       </section>
+     <footer class="sticky-bottom">
     
     <div>
           <a href="index.html">  <p><i class="fas fa-plus"></i></p>
@@ -82,89 +95,3 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy1iAAVvW9l0HXJ3MXipB2x6YvofjTU6o&libraries=places&callback=initMap" async defer></script>
   </body>
 </html>
-
- <script>
-      var map;
-var service;
-var infowindow;
-var latitude,longitude;
-
-function initMap() {
-     //navigator.geolocation.getCurrentPosition(success);
-  //function success(position)
- //{
-    latitude = 24.9056305;
-
- longitude = 67.0823192;
-var pyrmont = new google.maps.LatLng(latitude,longitude);
-
-//console.log(localStorage.getItem("longitude"));
-//console.log(longitude);
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
-    });
-
-  var request = {
-    location: pyrmont,
-    radius: '500',
-    type: ['restaurant']
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
-
- //}
- 
-  
-}
-
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      
-      createMarker(results[i]);
-     // createPhoto(place);
-    }
-  }
-}
-function createMarker(place) {
-  var photos = place.photos;
-  var i=0;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-        //console.log(place.name);
-        //console.log(place);
-  if (!photos) {
-     return;
-  }
-
-
-       document.getElementById("places").innerHTML+=  `<div class="first-place">
-        <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
-        <div class="inner-style">
-            <p class="foodway"> ${place.name} <br><small>${place.rating}</small></p>
-            <div class="inner-style1">
-                  <p><i class="fas fa-map-marker-alt"></i>
-                      ${place.vicinity}</p>
-                  <p style="color:#ed8707; padding-left: 27px;">Next deal 3pm to 7pm </p>
-            </div>
-          
-            </div>
-          </div>
-        
-        `;
-      }
-
-
-
-
-    </script>

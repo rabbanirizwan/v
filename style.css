@@ -7,6 +7,7 @@
     padding-right: 20px;
     padding-top: 5px;
     font-family: 'Chewy', cursive;
+    font-size: 35px;
     
 }
 .second-nav{
@@ -103,6 +104,8 @@ section{
 .second-nav #one a{
     color: orangered;
 }
+
+/*
 @media only screen and (min-width:1000px)
 {
     .first-place{
@@ -114,4 +117,4 @@ section{
     .first-place-img{
         width: 350px;
     }
-}
+}*/
