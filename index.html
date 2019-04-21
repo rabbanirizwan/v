@@ -6,14 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Roboto:700i" rel="stylesheet"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
    
@@ -46,11 +40,14 @@
     <section id="places"> 
    
     </section>
-
+    <section id="myDIV">
+      <p>dadadaasdsadasd</p>
+      <p>thisn oosa</p>
+    </section>
     <footer class="sticky-bottom">
     
     <div>
-          <a href="index.html">  <p><i class="fas fa-plus"></i></p>
+          <a onclick="near()">  <p><i class="fas fa-plus"></i></p>
             <p>Near me</p></a>
     
     </div>
@@ -70,8 +67,8 @@
         
     </div>
     <div>
-            <p><i class="far fa-heart"></i></p>
-            <p>favourite</p>
+          <a onclick="fav()"> <p><i class="far fa-heart"></i></p>
+              <p>favourite</p></a>
     </div>   
         
 </footer>
@@ -84,11 +81,51 @@
 </html>
 
  <script>
-      var map;
-var service;
-var infowindow;
-var latitude,longitude;
+//       var map;
+// var service;
+// var infowindow;
+// var latitude,longitude;
 
+// function initMap() {
+//      //navigator.geolocation.getCurrentPosition(success);
+//   //function success(position)
+//  //{
+//     latitude = 24.9056305;
+
+//  longitude = 67.0823192;
+// var pyrmont = new google.maps.LatLng(latitude,longitude);
+
+// //console.log(localStorage.getItem("longitude"));
+// //console.log(longitude);
+//   map = new google.maps.Map(document.getElementById('map'), {
+//       center: pyrmont,
+//       zoom: 15
+//     });
+
+//   var request = {
+//     location: pyrmont,
+//     radius: '500',
+//     type: ['restaurant']
+//   };
+
+//   service = new google.maps.places.PlacesService(map);
+//   service.nearbySearch(request, callback);
+
+//  //}
+ 
+  
+// }
+
+// function callback(results, status) {
+//   if (status == google.maps.places.PlacesServiceStatus.OK) {
+//     for (var i = 0; i < results.length; i++) {
+//       var place = results[i];
+      
+//       createMarker(results[i]);
+//      // createPhoto(place);
+//     }
+//   }
+// }
 function initMap() {
      //navigator.geolocation.getCurrentPosition(success);
   //function success(position)
@@ -147,23 +184,50 @@ function createMarker(place) {
      return;
   }
 
-
-       document.getElementById("places").innerHTML+=  `<div class="first-place">
+if(tab == 1)
+{
+   console.log(tab);
+   document.getElementById("places").innerHTML+=  `<div class="first-place">
         <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
         <div class="inner-style">
             <p class="foodway"> ${place.name} <br><small>${place.rating}</small></p>
             <div class="inner-style1">
-                  <p><i class="fas fa-map-marker-alt"></i>
+                  <p style="min-width:40px;max-width:100px;"><i class="fas fa-map-marker-alt"></i>
                       ${place.vicinity}</p>
-                  <p style="color:#ed8707; padding-left: 27px;">Next deal 3pm to 7pm </p>
+                  
             </div>
           
             </div>
           </div>
         
         `;
-      }
+ 
+}
+if(tab == 2)
+{
+   console.log(tab);
+   document.getElementById("places").innerHTML+=  `<div class="alert alert-warning" role="alert">
+  ${place.name}
+</div><div class="first-place">
+        <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
+        <div class="inner-style">
+            <p class="foodway"><small>${place.rating}</small></p>
+            <div class="inner-style1">
+                  <p style="min-width:40px;max-width:50px;><i class="fas fa-map-marker-alt"></i>
+                      ${place.vicinity}</p>
+                   </div>
+          
+            </div>
+          </div>
+        
+        `;
+ 
+}
 
+      }
+   
+
+    
 
 
 

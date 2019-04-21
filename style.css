@@ -61,6 +61,7 @@
     height: 200px;
     width: 580px;
     margin-right: 17px;
+    min-width: 200px;
 }
 .inner-style{
     display: flex;
@@ -104,17 +105,26 @@ section{
 .second-nav #one a{
     color: orangered;
 }
+#myDIV{
+    display: none;
+}
 
-/*
-@media only screen and (min-width:1000px)
-{
+
+@media only screen and (min-width:1000px){
     .first-place{
         justify-content: space-evenly;
     }
+   
 }
-@media only screen and (max-width:700px)
+/*@media only screen and (max-width:700px)
 {
     .first-place-img{
-        width: 350px;
+        width: 200px;
     }
 }*/
+@media only screen and (max-width: 700px) {
+ #first-place-img{
+        width: 300px;
+    }
+   
+}
