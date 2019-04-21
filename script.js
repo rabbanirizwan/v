@@ -4,7 +4,7 @@ function food1() {
     document.getElementById("places").innerHTML = " ";
 
 //console.log(localStorage.getItem("lastname"));
-var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
+var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
@@ -45,7 +45,8 @@ var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStora
 function food2() {
     document.getElementById("places").innerHTML = " ";
 console.log(Number(localStorage.getItem("latitude")));
-    var pyrmont = new google.maps.LatLng(Number(localStorage.getItem("latitude")),Number(localStorage.getItem("longitude")));
+
+    var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
@@ -131,7 +132,7 @@ function food4() {
 
     document.getElementById("places").innerHTML = " ";
 
-    var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
+    var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
@@ -172,7 +173,7 @@ function food5() {
 
     document.getElementById("places").innerHTML = " ";
 
-    var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
+    var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
@@ -213,7 +214,7 @@ function food5() {
 function food6() {
  document.getElementById("places").innerHTML = " ";
 
-    var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
+    var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
